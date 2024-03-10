@@ -390,4 +390,4 @@ ApplicationWindow {
 ```
 ## Quelques exercices :
 
-![Mon Projet](./img/Frame_1.png)
+![Mon Projet](./img/Frame_2.png)
