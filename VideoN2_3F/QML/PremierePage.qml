@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Effects
+import Qt5Compat.GraphicalEffects
 
 Component {
     Item {
@@ -12,6 +13,21 @@ Component {
             width: parent.width * 0.8 ; height: width
 
             anchors.centerIn: parent
+
+            asynchronous: true
+            fillMode: Image.PreserveAspectCrop
+
+            layer.enabled: true
+            layer.effect: OpacityMask{
+                maskSource: Item{
+                    width: imageDeBienvenu.width
+                    height: imageDeBienvenu.height
+                    Rectangle{
+                        anchors.fill: parent
+                        radius: 100
+                    }
+                }
+            }
         }
 
         Rectangle {

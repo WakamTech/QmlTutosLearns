@@ -26,4 +26,8 @@ ApplicationWindow {
     DeuxiemePage {
         id: deuxiemePage
     }
+
+    TroisiemePage {
+        id: troisiemePage
+    }
 }
