@@ -142,7 +142,7 @@ Nous allons utiliser Grid pour placer ces images la ainsi dans la fenetre
 
 ### Exemple :
 
-[![Ajouter Image en Qt](./img/img_tuto5/uploadImage.gif)](./img/img_tuto5/uploadImage.mkv)
+[![Ajouter Image en Qt](./img/img_tuto5/uploadImage.gif)](https://youtu.be/sooHEAz8hPg)
 
 > Toujours Placer chaque image dans un rectangle, l_image doit toujour remplire le rectange. Ainsi la vie sera plus simple pour appliquer les ombrages et les contours pour les images
 
