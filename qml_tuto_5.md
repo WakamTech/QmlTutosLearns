@@ -533,3 +533,15 @@ Voici un menu de couleur bleu clair avec des courbures aux bord :
         }
     }
 ```
+
+# Exercice :
+
+Vous devez réaliser ce qui suit : 
+
+![Mon Projet](./img/img_tuto5/AccueilExo.png)
+
+![Mon Projet](./img/img_tuto5/AccueilExo2.png)
+
+Voici ici l'ensemble des images pour faire cet exercice : 
+
+<a href=./img/img_tuto5/imgs.zip>Les 6 images pour faire cet Exercice</a>
