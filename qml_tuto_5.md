@@ -138,21 +138,143 @@ Nous allons utiliser Grid pour placer ces images la ainsi dans la fenetre
 
 <a href=./img/img_tuto5/Logo.png>Image Logo</a>
 
+<a href=./img/img_tuto5/uploadImage.mkv>Image Logo</a>
+
 ### Exemple :
 
-![Mon Projet](./img/grid.png)
+[![Ajouter Image en Qt](./img/img_tuto5/uploadImage.gif)](./img/img_tuto5/uploadImage.mkv)
+
+> Toujours Placer chaque image dans un rectangle, l_image doit toujour remplire le rectange. Ainsi la vie sera plus simple pour appliquer les ombrages et les contours pour les images
 
 ```qml
-    Grid {
+       Grid {
+        id: grid
         rows: 2
         columns: 2
-        spacing: 10
-        
-        anchors.centerIn: parent
 
-        Rectangle { width: 100; height: 100; color: "red" }
-        Rectangle { width: 100; height: 100; color: "green" }
-        Rectangle { width: 100; height: 100; color: "blue" }
-        Rectangle { width: 100; height: 100; color: "yellow" }
+        anchors.centerIn: parent
+        width: parent.width * 0.8
+        height: width
+
+        spacing: 8
+
+        Item {
+            width: (grid.width - 8) / 2; height: width
+
+            Rectangle {
+                anchors.fill: parent
+
+                Image {
+                    id: imageMTN
+                    source: "qrc:/Images/MTN.png"
+
+                    anchors.fill: parent
+                    asynchronous: true
+                    fillMode: Image.PreserveAspectCrop
+
+                    layer.enabled: true
+                    layer.effect: OpacityMask{
+                        maskSource: Item{
+                            width: imageMTN.width
+                            height: imageMTN.height
+                            Rectangle{
+                                anchors.fill: parent
+                                radius: 24
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        Item {
+            width: (grid.width - 8) / 2; height: width
+
+            Rectangle {
+                anchors.fill: parent
+
+                Image {
+                    id: imageMOOV
+                    source: "qrc:/Images/MOOV.png"
+
+                    anchors.fill: parent
+                    asynchronous: true
+                    fillMode: Image.PreserveAspectCrop
+
+                    layer.enabled: true
+                    layer.effect: OpacityMask{
+                        maskSource: Item{
+                            width: imageMOOV.width
+                            height: imageMOOV.height
+                            Rectangle{
+                                anchors.fill: parent
+                                radius: 24
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        Item {
+            width: (grid.width - 8) / 2; height: width
+
+            Rectangle {
+                anchors.fill: parent
+
+                Image {
+                    id: imageCeltis
+                    source: "qrc:/Images/Celtis.png"
+
+                    anchors.fill: parent
+                    asynchronous: true
+                    fillMode: Image.PreserveAspectCrop
+
+                    layer.enabled: true
+                    layer.effect: OpacityMask{
+                        maskSource: Item{
+                            width: imageCeltis.width
+                            height: imageCeltis.height
+                            Rectangle{
+                                anchors.fill: parent
+                                radius: 24
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        Item {
+            width: (grid.width - 8) / 2; height: width
+
+            Rectangle {
+                anchors.fill: parent
+
+                Image {
+                    id: imageLogo
+                    source: "qrc:/Images/logo.png"
+
+                    anchors.fill: parent
+                    asynchronous: true
+                    fillMode: Image.PreserveAspectCrop
+
+                    layer.enabled: true
+                    layer.effect: OpacityMask{
+                        maskSource: Item{
+                            width: imageLogo.width
+                            height: imageLogo.height
+                            Rectangle{
+                                anchors.fill: parent
+                                radius: 24
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
+
+
 ```
