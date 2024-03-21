@@ -425,6 +425,8 @@ ApplicationWindow {
 
 Voici le code final avec Grid et pour une couleur Bleu : 
 
+<a href=./resource/Main.qml>Code QML Complet</a>
+
 ```qml
 import QtQuick
 import QtQuick.Window
