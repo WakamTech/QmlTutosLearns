@@ -592,3 +592,102 @@ ApplicationWindow {
 # Comment on fait un menu en QML
 
 Maintenat apprenons à réaliser un menu en QML
+
+## Pour commencer
+
+![Mon Projet](./img/img_tuto5/button.png)
+
+![Mon Projet](./img/img_tuto5/drawer.png)
+
+Quand on clique sur le bouton, le menu s'ouvre
+
+> Commençcons par placer le bouton, dans la fenetre, en bas, centré horizontalement
+
+Ce code sera placé juste après notre Grid
+
+```qml 
+    Item {
+        // Un conteneur invisible pour contenir le bouton et son ombrage
+        // Toujour le faire ainsi
+        id: buttonItem
+        width: 230
+        height: 48
+
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottomMargin: 16
+
+        Rectangle {
+            // Le rectangle qui représente notre bouton
+            id: button
+
+            color: "#3357FF"
+            radius: 8
+
+            anchors.fill: parent
+
+            Text {
+                text: "Open Menu"
+                anchors.centerIn: parent
+                color: "white"
+                font.pixelSize: 24
+            }
+
+            MouseArea {
+                // Zone de clic
+                anchors.fill: parent
+                onClicked: {
+                    drawer.open()
+                    // Notre menu s'appelera "drawer", et quand on clique 
+                    // sur le bouton, il s'ouvrira 
+                }
+            }
+        }
+
+        MultiEffect {
+            // L'ombrage de notre bouton
+            source: button
+            anchors.fill: button
+
+            shadowColor: "#000000"
+            shadowBlur: 1
+            shadowOpacity: 0.75
+            shadowVerticalOffset:0
+            shadowHorizontalOffset: 2
+            shadowEnabled: true
+        }
+    }
+
+```
+
+Chez nous en Qml, Un munu (le cadre du menu) sera un Drawer
+
+Voici un menu de couleur bleu clair avec des courbures aux bord : 
+
+> Vous placez ce code juste avant le Grid 
+
+```qml
+    Drawer {
+        // Drawer, c'est ce qui nous permet en QML de crer et gerer les menus
+        id: drawer
+        width: 0.75 * mainWindow.width
+        height: mainWindow.height
+
+
+        background: Rectangle {
+            radius: 24
+            color: "lightblue"
+
+            width: parent.width + radius
+            height: parent.height
+            x: - radius
+        }
+
+        Text {
+            id: textMenu
+            text: "Je suis un menu"
+
+            anchors.centerIn: parent
+        }
+    }
+```
