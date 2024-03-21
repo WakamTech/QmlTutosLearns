@@ -140,7 +140,7 @@ Nous allons utiliser Grid pour placer ces images la ainsi dans la fenetre
 
 <a href=./img/img_tuto5/uploadImage.mkv>Image Logo</a>
 
-### Exemple :
+### Exemple 1 :
 
 [![Ajouter Image en Qt](./img/img_tuto5/uploadImage.gif)](https://youtu.be/sooHEAz8hPg)
 
@@ -148,6 +148,312 @@ Nous allons utiliser Grid pour placer ces images la ainsi dans la fenetre
 
 ```qml
        Grid {
+        id: grid
+        rows: 2
+        columns: 2
+
+        anchors.centerIn: parent
+        width: parent.width * 0.8
+        height: width
+
+        spacing: 8
+
+        Item {
+            width: (grid.width - 8) / 2; height: width
+
+            Rectangle {
+                anchors.fill: parent
+
+                Image {
+                    id: imageMTN
+                    source: "qrc:/Images/MTN.png"
+
+                    anchors.fill: parent
+                    asynchronous: true
+                    fillMode: Image.PreserveAspectCrop
+
+                    layer.enabled: true
+                    layer.effect: OpacityMask{
+                        maskSource: Item{
+                            width: imageMTN.width
+                            height: imageMTN.height
+                            Rectangle{
+                                anchors.fill: parent
+                                radius: 24
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        Item {
+            width: (grid.width - 8) / 2; height: width // Le 8 représente le spacing
+
+            Rectangle {
+                anchors.fill: parent
+
+                Image {
+                    id: imageMOOV
+                    source: "qrc:/Images/MOOV.png"
+
+                    anchors.fill: parent
+                    asynchronous: true
+                    fillMode: Image.PreserveAspectCrop
+
+                    layer.enabled: true
+                    layer.effect: OpacityMask{
+                        maskSource: Item{
+                            width: imageMOOV.width
+                            height: imageMOOV.height
+                            Rectangle{
+                                anchors.fill: parent
+                                radius: 24
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        Item {
+            width: (grid.width - 8) / 2; height: width
+
+            Rectangle {
+                anchors.fill: parent
+
+                Image {
+                    id: imageCeltis
+                    source: "qrc:/Images/Celtis.png"
+
+                    anchors.fill: parent
+                    asynchronous: true
+                    fillMode: Image.PreserveAspectCrop
+
+                    layer.enabled: true
+                    layer.effect: OpacityMask{
+                        maskSource: Item{
+                            width: imageCeltis.width
+                            height: imageCeltis.height
+                            Rectangle{
+                                anchors.fill: parent
+                                radius: 24
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        Item {
+            width: (grid.width - 8) / 2; height: width
+
+            Rectangle {
+                anchors.fill: parent
+
+                Image {
+                    id: imageLogo
+                    source: "qrc:/Images/logo.png"
+
+                    anchors.fill: parent
+                    asynchronous: true
+                    fillMode: Image.PreserveAspectCrop
+
+                    layer.enabled: true
+                    layer.effect: OpacityMask{
+                        maskSource: Item{
+                            width: imageLogo.width
+                            height: imageLogo.height
+                            Rectangle{
+                                anchors.fill: parent
+                                radius: 24
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+```
+
+# Encore plus loin
+
+Sur Android (donc vous tester l'application sous android)
+Nous allons changer la couleur du "Status Bar", c'est la partie en haut oû l'heure, et les petits icons se trouvent
+
+Voici successivement ce qu'on va réaliser
+
+![Mon Projet](./img/img_tuto5/Accueil_bleu.png)
+
+![Mon Projet](./img/img_tuto5/Accueil_jaune.png)
+
+![Mon Projet](./img/img_tuto5/Accueil_vert.png)
+
+Sur la premiere image, le StatusBar est Bleu, puis Jaune sur La seconde Image et Vert sur la troisieme
+
+> Voici comment ça marche
+On ajoute ceci en haut 
+```qml
+import StatusBarColorChanger 1.0
+```
+
+Puis juste avant notre Grid, on Ajoute ceci 
+
+```qml
+    StatusBarColorChanger {
+        id: statusBarColorChanger
+
+        Component.onCompleted: {
+            
+        }
+    }
+```
+
+Voici les couleurs : 
+
+    bleu: "#005BC4"
+    jaune: "#FFCA06"
+    vert: "#13CA22"
+
+Pour changer la couleur en bleu, on se met dans **Component.onCompleted: ** et on complete : 
+
+```qml
+    statusBarColorChanger.changeStatusBarColor("#005BC4") // Couleur Bleu
+```
+
+Code Final sans le Grid : 
+
+```qml
+import QtQuick
+import QtQuick.Window
+import QtQuick.Controls
+import QtQuick.Effects
+import Qt5Compat.GraphicalEffects
+
+import StatusBarColorChanger 1.0
+
+
+ApplicationWindow {
+    id: mainWindow
+    width: 319
+    height: 690
+    visible: true
+    color: "white"
+
+    title: qsTr("Hello World")
+
+
+    StatusBarColorChanger {
+        id: statusBarColorChanger
+
+        Component.onCompleted: {
+            statusBarColorChanger.changeStatusBarColor("#005BC4")
+        }
+    }
+}
+
+```
+
+Pour avoir la couleur Jaune : 
+
+```qml
+import QtQuick
+import QtQuick.Window
+import QtQuick.Controls
+import QtQuick.Effects
+import Qt5Compat.GraphicalEffects
+
+import StatusBarColorChanger 1.0
+
+
+ApplicationWindow {
+    id: mainWindow
+    width: 319
+    height: 690
+    visible: true
+    color: "white"
+
+    title: qsTr("Hello World")
+
+
+    StatusBarColorChanger {
+        id: statusBarColorChanger
+
+        Component.onCompleted: {
+            statusBarColorChanger.changeStatusBarColor("#FFCA06")
+        }
+    }
+}
+
+```
+
+Pour avoir la couleur Verte : 
+
+```qml
+import QtQuick
+import QtQuick.Window
+import QtQuick.Controls
+import QtQuick.Effects
+import Qt5Compat.GraphicalEffects
+
+import StatusBarColorChanger 1.0
+
+
+ApplicationWindow {
+    id: mainWindow
+    width: 319
+    height: 690
+    visible: true
+    color: "white"
+
+    title: qsTr("Hello World")
+
+
+    StatusBarColorChanger {
+        id: statusBarColorChanger
+
+        Component.onCompleted: {
+            statusBarColorChanger.changeStatusBarColor("#13CA22")
+        }
+    }
+}
+
+```
+
+Voici le code final avec Grid et pour une couleur Bleu : 
+
+```qml
+import QtQuick
+import QtQuick.Window
+import QtQuick.Controls
+import QtQuick.Effects
+import Qt5Compat.GraphicalEffects
+
+import StatusBarColorChanger 1.0
+
+
+ApplicationWindow {
+    id: mainWindow
+    width: 319
+    height: 690
+    visible: true
+    color: "white"
+
+    title: qsTr("Hello World")
+
+
+    StatusBarColorChanger {
+        id: statusBarColorChanger
+
+        Component.onCompleted: {
+            statusBarColorChanger.changeStatusBarColor("#005BC4")
+        }
+    }
+
+    Grid {
         id: grid
         rows: 2
         columns: 2
@@ -275,6 +581,14 @@ Nous allons utiliser Grid pour placer ces images la ainsi dans la fenetre
         }
 
     }
-
+}
 
 ```
+
+> Compiler sur votre téléphone
+
+> Sur l'ordinateur, vous ne verrez aucun changement de couleur
+
+# Comment on fait un menu en QML
+
+Maintenat apprenons à réaliser un menu en QML
