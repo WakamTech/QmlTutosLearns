@@ -67,6 +67,7 @@ Row {
     Rectangle { width: 50; height: 100; color: "red" }
     Rectangle { width: 50; height: 100; color: "green" }
     Rectangle { width: 50; height: 100; color: "blue" }
+    Rectangle { width: 50; height: 100; color: "yellow" }
 }
 ```
 
