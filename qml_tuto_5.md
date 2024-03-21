@@ -282,6 +282,5 @@ Réalisez tout ceci avec soit Column, soit Row ou Soit Grid
 
 ![Mon Projet](./img/Frame_2.png)
 
-![Mon Projet](./img/shadows.png)
 
 ![Mon Projet](./img/exo_1.png)
