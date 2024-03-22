@@ -478,10 +478,19 @@ Ce code sera placé juste après notre Grid
             MouseArea {
                 // Zone de clic
                 anchors.fill: parent
+                
                 onClicked: {
+                    button.color = "#3357FF"
                     drawer.open()
-                    // Notre menu s'appelera "drawer", et quand on clique 
-                    // sur le bouton, il s'ouvrira 
+                    // Notre menu s'appelera "drawer", et quand on clique
+                    // sur le bouton, il s'ouvrira
+                }
+
+                onPressed: {
+                    button.color = "#0000a7"
+                }
+                onReleased: {
+                    button.color = "#0000a7"
                 }
             }
         }
