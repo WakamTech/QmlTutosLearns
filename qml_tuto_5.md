@@ -544,4 +544,13 @@ Vous devez réaliser ce qui suit :
 
 Voici ici l'ensemble des images pour faire cet exercice : 
 
+## Pour réusssir cet exercice : 
+
+* L'image sera placée en haut dans le Drawer comme sur l'image
+* Le Texte **USSD Bénin** sera placé Apres l'image dans le code, mais sera positionné par les ancres pour avoir le résultat de l'image
+* Apres, On place une **Column** situé en bas de l'image et qui remplit le reste du **Drawer**
+* Pour chaque ligne du menu sur l'image, Il faut ajouter un Rectangle, et dans chaque rectangle, on place la **Row** (Le rectangle n'a pas besoin d'être identifié)
+* Donc dans la **Row**, on aura l'image puis le texte correspondant 
+* L'image est le premier élément ajouté dans le **Row**, prévoir un espacement de **16**
+
 <a href=./img/img_tuto5/imgs.zip>Les 6 images pour faire cet Exercice</a>

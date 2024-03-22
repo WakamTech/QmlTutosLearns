@@ -79,45 +79,53 @@ ApplicationWindow {
     visible: true
     title: qsTr("Hello World")
 
-    Rectangle {
-        id: button
+    Item {
+        id: buttonItem
+        anchors.centerIn: parent
         width: 100
         height: 40
-        color: "lightblue"
-        radius: 5
-        anchors.centerIn: parent
 
-        Text {
-            text: "Cliquez-moi"
-            anchors.centerIn: parent
-        }
-
-        MouseArea {
+        Rectangle {
+            id: button
             anchors.fill: parent
-            onClicked: {
-                button.color = "lightgreen"
+            color: "lightgreen"
+            radius: 5
+
+
+            Text {
+                text: "Cliquez-moi"
+                anchors.centerIn: parent
             }
-            onPressed: {
-                button.color = "darkblue"
+
+            MouseArea {
+                anchors.fill: parent
+
+                onClicked: {
+                    button.color = "lightgreen"
+                }
+                onPressed: {
+                    button.color = "darkblue"
+                }
+                onReleased: {
+                    button.color = "lightblue"
+                }
             }
-            onReleased: {
-                button.color = "lightblue"
-            }
+        }
+
+
+        MultiEffect {
+            source: button
+            anchors.fill: button
+
+            shadowColor: "#0C1A4B"
+            shadowOpacity: 0.24
+            shadowBlur: 1
+            shadowEnabled: true
+            shadowVerticalOffset: 0
+            shadowHorizontalOffset: 0
         }
     }
 
-
-    MultiEffect {
-        source: button
-        anchors.fill: button
-
-        shadowColor: "#0C1A4B"
-        shadowOpacity: 0.24
-        shadowBlur: 1
-        shadowEnabled: true
-        shadowVerticalOffset: 0
-        shadowHorizontalOffset: 0
-    }
 }
 
 ```
