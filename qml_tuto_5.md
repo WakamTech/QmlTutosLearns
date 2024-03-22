@@ -538,12 +538,6 @@ Voici un menu de couleur bleu clair avec des courbures aux bord :
 
 Vous devez réaliser ce qui suit : 
 
-![Mon Projet](./img/img_tuto5/AccueilExo.png)
-
-![Mon Projet](./img/img_tuto5/AccueilExo2.png)
-
-Voici ici l'ensemble des images pour faire cet exercice : 
-
 ## Pour réusssir cet exercice : 
 
 * L'image sera placée en haut dans le Drawer comme sur l'image
@@ -552,5 +546,13 @@ Voici ici l'ensemble des images pour faire cet exercice :
 * Pour chaque ligne du menu sur l'image, Il faut ajouter un Rectangle, et dans chaque rectangle, on place la **Row** (Le rectangle n'a pas besoin d'être identifié)
 * Donc dans la **Row**, on aura l'image puis le texte correspondant 
 * L'image est le premier élément ajouté dans le **Row**, prévoir un espacement de **16**
+
+![Mon Projet](./img/img_tuto5/AccueilExo.png)
+
+![Mon Projet](./img/img_tuto5/AccueilExo2.png)
+
+Voici ici l'ensemble des images pour faire cet exercice : 
+
+
 
 <a href=./img/img_tuto5/imgs.zip>Les 6 images pour faire cet Exercice</a>
